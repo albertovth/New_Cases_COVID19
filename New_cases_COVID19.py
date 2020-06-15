@@ -118,11 +118,13 @@ df_new_total.plot(kind='line',x='World_Total',y='World_New',color='darkmagenta',
 df_new_total.plot(kind='line',x='Denmark_Total',y='Denmark_New', color='black', ax=ax, logx=True,logy=True)
 df_new_total.plot(kind='line',x='Norway_Total',y='Norway_New', color='red', ax=ax, logx=True,logy=True)
 df_new_total.plot(kind='line',x='Sweden_Total',y='Sweden_New', color='yellow', ax=ax, logx=True,logy=True)
-df_new_total.plot(kind='line',x='Finland_Total',y='Finland_New', color='cyan', ax=ax, logx=True,logy=True)
+df_new_total.plot(kind='line',x='Finland_Total',y='Finland_New', color='cyan', ax=a, logx=True,logy=True)
 df_new_total.plot(kind='line',x='Iceland_Total',y='Iceland_New', color='navy', ax=ax, logx=True,logy=True)
 df_trend_line_prediction.plot(kind='line',x='Total cases in the world',y='World Daily Trend', color='lime', ax=ax, logx=True,logy=True, title='Nordic Countries')
 
 plt.show()
+plt.savefig('/Desktop/nordic_countries.png')
+plt.clf()
 
 ## Create list for matplotlib color names corresponding to each country in the world,
 ## with as little color repetition as possible
@@ -169,4 +171,4 @@ for list_titles, titles in region_list:
     df_trend_line_prediction.plot(kind='line',x='Total cases in the world',y='World Daily Trend', color='lime', ax=ax, logx=True,logy=True,figsize = (10,7),title=str(titles))
     ax.legend(loc=(1.01, 0.01), ncol=2)
     plt.tight_layout()
-    plt.show()
+    plt.savefig('Desktop/'+str(titles)+'.png')
