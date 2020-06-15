@@ -110,6 +110,9 @@ df_trend_line_prediction['World Daily Trend']=Y
 print('Global Trend Line Prediction:')
 print(df_trend_line_prediction)
 
+## Create date and time variable
+date_time=datetime.datetime.now()
+
 ## Plot data from Nordic countries, World and trend curve as lines
 ## Names below can be changed manually, to visualize other countries
 ax = plt.gca()
@@ -123,7 +126,7 @@ df_new_total.plot(kind='line',x='Iceland_Total',y='Iceland_New', color='navy', a
 df_trend_line_prediction.plot(kind='line',x='Total cases in the world',y='World Daily Trend', color='lime', ax=ax, logx=True,logy=True, title='Nordic Countries')
 
 plt.show()
-plt.savefig('/Users/user/Desktop/nordic_countries.png')
+plt.savefig('/Users/user/Desktop/nordic_countries_'+str(date_time)+'.png')
 plt.clf()
 
 ## Create list for matplotlib color names corresponding to each country in the world,
@@ -171,4 +174,4 @@ for list_titles, titles in region_list:
     df_trend_line_prediction.plot(kind='line',x='Total cases in the world',y='World Daily Trend', color='lime', ax=ax, logx=True,logy=True,figsize = (10,7),title=str(titles))
     ax.legend(loc=(1.01, 0.01), ncol=2)
     plt.tight_layout()
-    plt.savefig('/Users/user/Desktop/'+str(titles)+'.png')
+    plt.savefig('/Users/user/Desktop/'+str(titles)+'_'+str(date_time)+'.png')
