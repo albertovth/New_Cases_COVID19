@@ -123,7 +123,7 @@ df_new_total.plot(kind='line',x='Iceland_Total',y='Iceland_New', color='navy', a
 df_trend_line_prediction.plot(kind='line',x='Total cases in the world',y='World Daily Trend', color='lime', ax=ax, logx=True,logy=True, title='Nordic Countries')
 
 plt.show()
-plt.savefig('/Desktop/nordic_countries.png')
+plt.savefig('/Users/user/Desktop/nordic_countries.png')
 plt.clf()
 
 ## Create list for matplotlib color names corresponding to each country in the world,
@@ -171,4 +171,4 @@ for list_titles, titles in region_list:
     df_trend_line_prediction.plot(kind='line',x='Total cases in the world',y='World Daily Trend', color='lime', ax=ax, logx=True,logy=True,figsize = (10,7),title=str(titles))
     ax.legend(loc=(1.01, 0.01), ncol=2)
     plt.tight_layout()
-    plt.savefig('Desktop/'+str(titles)+'.png')
+    plt.savefig('/Users/user/Desktop/'+str(titles)+'.png')
