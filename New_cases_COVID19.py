@@ -175,3 +175,4 @@ for list_titles, titles in region_list:
     ax.legend(loc=(1.01, 0.01), ncol=2)
     plt.tight_layout()
     plt.savefig('/Users/user/Desktop/'+str(titles)+'_'+str(date_time)+'.png')
+    plt.clf()
