@@ -16,10 +16,11 @@ import numpy as np
 import urllib
 import requests
 import unicodedata
+import datetime
 
 ## Read csv file from source and create data frame
 
-url='http://raw.githubusercontent.com/owid/covid-19-data/master/public/data/ecdc/new_cases.csv'
+url='https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/archived/ecdc/new_cases.csv'
 s=requests.get(url).content
 df_daily_cases=pd.read_csv(io.StringIO(s.decode('utf-8')),header=0)
 df_daily_cases.set_index('date', inplace=True, drop=True)
@@ -121,7 +122,7 @@ df_new_total.plot(kind='line',x='World_Total',y='World_New',color='darkmagenta',
 df_new_total.plot(kind='line',x='Denmark_Total',y='Denmark_New', color='black', ax=ax, logx=True,logy=True)
 df_new_total.plot(kind='line',x='Norway_Total',y='Norway_New', color='red', ax=ax, logx=True,logy=True)
 df_new_total.plot(kind='line',x='Sweden_Total',y='Sweden_New', color='yellow', ax=ax, logx=True,logy=True)
-df_new_total.plot(kind='line',x='Finland_Total',y='Finland_New', color='cyan', ax=a, logx=True,logy=True)
+df_new_total.plot(kind='line',x='Finland_Total',y='Finland_New', color='cyan', ax=ax, logx=True,logy=True)
 df_new_total.plot(kind='line',x='Iceland_Total',y='Iceland_New', color='navy', ax=ax, logx=True,logy=True)
 df_trend_line_prediction.plot(kind='line',x='Total cases in the world',y='World Daily Trend', color='lime', ax=ax, logx=True,logy=True, title='Nordic Countries')
 
